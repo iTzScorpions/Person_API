@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  portainer:
+    image: cr.portainer.io/portainer/portainer-ce:2.11.0
+    container_name: portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      proxy_default:
+        ipv4_address: 172.20.0.10
+
+
+networks:
+  proxy_default:
+    external: true
+volumes:
+  portainer_data:

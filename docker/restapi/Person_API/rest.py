@@ -16,8 +16,6 @@ def get_person() :
 
 
     return render_template("savedPersons.html", persons = data)
-    
-
 
 @app.route('/person', methods=['POST'])
 def post_person():
@@ -32,6 +30,8 @@ def post_person():
             'first_name': firstName,
             'last_name': lastName
         }
+
+        print(person)
         
     if (person == None):
         return render_template("uploadFail.html")
@@ -42,4 +42,4 @@ def post_person():
 
     return render_template("uploadSuccess.html" if data != None else "uploadFail.html")
 
-app.run(debug=True)
+app.run(debug=False, host='0.0.0.0', port=5000)

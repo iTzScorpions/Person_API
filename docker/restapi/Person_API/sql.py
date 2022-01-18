@@ -7,10 +7,10 @@ class SQlConnector:
 
     def __connect_db__(self):
         try:
-            connection = cn.connect(host='127.0.0.1',
+            connection = cn.connect(host='172.20.0.4',
                                                 database='person',
-                                                user='root',
-                                                password='root')
+                                                user='gast',
+                                                password='gast')
             return connection
 
         except cn.Error as err:
