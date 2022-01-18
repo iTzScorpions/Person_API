@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>Person API</title>
+    <style>
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form {
+            margin: auto;
+            left: 50%;
+            top: 50%;
+            padding: 20px;
+            background-color: blueviolet;
+            border-radius: 5px;
+            box-shadow: 0 0 1em black;
+        }
+
+        .text {
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .input {
+            font-size: x-large;
+            border-radius: 5px;
+            text-align: center;
+            border-color: transparent;
+            border-width: 0;
+            margin-bottom: 5px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button {
+            width: 80%;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+            border-radius: 5px;
+            border-width: 0;
+            transition: 250ms;
+        }
+
+        .button:hover {
+            padding: 5px;
+            font-size: 29px;
+            background-color: lightgreen;
+        }
+
+        .link {
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" action="/person" method="post">
+            <label class="text" for="first_name">First name:</label><br>
+            <input class="input" ype="text" id="first_name" name="first_name" value="John"><br>
+            <label class="text" for="last_name">Last name:</label><br>
+            <input class="input" type="text" id="last_name" name="last_name" value="Doe"><br><br>
+            <div class="btn-container">
+                <input class="button" type="submit" value="Submit" id="btnSubmit">
+                <a class="link" href="/person">Show all added Persons</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

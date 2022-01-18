@@ -1,0 +1,50 @@
+<html>
+        <head>
+            <title>Saved Persons</title>
+        </head>
+        <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .header {
+                background-color: lightgreen;
+                color: green;
+                margin-left: auto;
+                margin-right: auto;
+                width: fit-content;
+                padding: 5px;
+                border-radius: 5px;
+            }
+
+            .list {
+                margin-left: auto;
+                margin-right: auto;
+                list-style: None;
+                background: blueviolet;
+                width: fit-content;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .list_item {
+                color: white;
+                font-size: large;
+                font-weight: bold;
+            }
+        </style>
+        <body>
+            <div class="container">
+                <h1 class="header">
+                    List of all saved Persons:
+                </h1>
+                <ul class="list">
+                    {% for person in persons%}
+                    <li class="list_item">{{person.first_name}} {{person.last_name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </body>
+    </html>
