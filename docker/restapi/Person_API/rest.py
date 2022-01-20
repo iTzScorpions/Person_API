@@ -20,18 +20,13 @@ def get_person() :
 @app.route('/person', methods=['POST'])
 def post_person():
     connector = SQlConnector()
-
-    person = request.get_json()
-
-    if (person == None):
-        firstName = request.form['first_name']
-        lastName = request.form['last_name']
-        person = {
-            'first_name': firstName,
-            'last_name': lastName
-        }
-
-        print(person)
+    
+    firstName = request.form['first_name']
+    lastName = request.form['last_name']
+    person = {
+        'first_name': firstName,
+        'last_name': lastName
+    }
         
     if (person == None):
         return render_template("uploadFail.html")
